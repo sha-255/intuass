@@ -1,0 +1,125 @@
+/* SHAPKA START */
+@media (max-width: 991px) {
+    .container {
+      max-width: 100%;
+      flex-wrap: wrap;
+      padding-left: 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .connect-button-container {
+      white-space: initial;
+    }
+  }
+  @media (max-width: 991px) {
+    .connect-button-text {
+      white-space: initial;
+    }
+  }
+  /* SHAPKA END */
+  
+  /* Menu start */
+  
+  /* menu end */
+  
+  /* button start */
+  @media (max-width: 991px) {
+    .button-container {
+      white-space: initial;
+      padding: 12px 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .content-wrapper {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .token-info {
+      white-space: initial;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .reward-info {
+      white-space: initial;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .image-container {
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .staking-info {
+      white-space: initial;
+      padding: 0 20px;
+    }
+  }
+  /* button end */
+  
+  /* inas stake pol start */
+  @media (max-width: 991px) {
+    .container {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 991px) {
+    .inner-container {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 991px) {
+    .section-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+  @media (max-width: 991px) {
+    .card-wrapper {
+      width: 100%;
+    }
+  }
+  @media (max-width: 991px) {
+    .card {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    .highlight-card {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .highlight-card-duration {
+      margin-left: 10px;
+    }
+  }
+  @media (max-width: 991px) {
+    .highlight-card-info {
+      white-space: initial;
+    }
+  }
+  @media (max-width: 991px) {
+    .highlight-card-rate {
+      margin-left: 10px;
+    }
+  }
+  @media (max-width: 991px) {
+    .metadata-wrapper {
+      white-space: initial;
+    }
+  }
+  @media (max-width: 991px) {
+    .important-card {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+  

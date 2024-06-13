@@ -1,0 +1,16 @@
+button:
+  about: О шаблоне
+  back: Назад
+  go: Перейти
+  home: Главная
+  toggle_dark: Включить темный режим
+  toggle_langs: Сменить язык
+intro:
+  desc: Самостоятельный начальный шаблон Vite
+  dynamic-route: Демо динамического маршрута
+  hi: Приветствуем, {name}!
+  whats-your-name: Логин
+  password: Пароль
+not-found: Не найден
+app:
+  name: Intuass
