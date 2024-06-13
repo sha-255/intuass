@@ -1,31 +1,22 @@
 <script setup lang="ts">
 interface Ticket {
-  time: Date
-  pool: number
-  tag: number
-  imageUrl: string
+  id: number
+  poolId: number
+  reloadTime: Date
+  imageUri: string
 }
 
-const tickets: Ref<Ticket[]> = ref(
-  [{
-    time: new Date(2024, 6, 11),
-    pool: 3,
-    tag: 152,
-    imageUri: 'https://i.imgur.com/PVLbuaE.png',
-  }, {
-    time: new Date(2024, 6, 11),
-    pool: 3,
-    tag: 152,
-    imageUri: 'https://i.imgur.com/n6NbiNM.png',
-  }, {
-    time: new Date(2024, 6, 11),
-    pool: 3,
-    tag: 152,
-    imageUri: 'https://i.imgur.com/WlcR5TF.png',
-  }],
-)
+onMounted(async () => {
+  await getCards()
+})
 
-const getDate = (date: Date): string => date.toISOString().split('T')[1].split('.')[0].slice(0, 5)
+const tickets: Ref<Ticket[]> = ref([])
+
+async function getCards() {
+  tickets.value = await (await fetch('http://localhost:80/cards')).json()
+}
+
+const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice(3, 8)
 </script>
 
 <template>
@@ -71,20 +62,20 @@ const getDate = (date: Date): string => date.toISOString().split('T')[1].split('
       <div class="ticket-container">
         <div v-for="(ticket, idx) in tickets" :key="idx" class="ticket" relative rounded-xl bg-transparent>
           <img :src="ticket.imageUri" alt="ticket" relative rounded-xl>
-          <div relative left--12 top--55 bg-black text-white>
+          <div relative left--12 top--55 text-white>
             <b shadow-black drop-shadow-2xl>
-              {{ getDate(ticket.time) }}
+              {{ getDate(ticket.reloadTime) }}
             </b>
           </div>
-          <div relative left--8 top--13 bg-black text-white>
+          <div relative left--8 top--13 text-white>
             <b shadow-black drop-shadow-2xl>
               Pool #
-              {{ ticket.pool }}
+              {{ ticket.poolId }}
             </b>
           </div>
-          <div relative left-9 top--19 bg-black text-white>
+          <div relative left-9 top--19 text-white>
             <b shadow-black drop-shadow-2xl>
-              #{{ ticket.tag }}
+              #{{ ticket.id }}
             </b>
           </div>
         </div>
