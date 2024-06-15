@@ -21,7 +21,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
 
 <template>
   <!-- SHAPKA -->
-  <section class="container">
+  <section class="container__header">
     <img
       loading="lazy"
       src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9705e7b747890da659615a342910978284e160d081bd1df967b14fa240c2a20?apiKey=5d085c7cdd73428593406abbf962b0e1&"
@@ -45,6 +45,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
   <!-- SHAPKA END -->
 
   <!-- MAIN -->
+
   <div class="main">
     <div
       style="
@@ -54,10 +55,25 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
         border: 2px;
         border-top: 0px;
         min-height: 30px;
-        min-width: 100px;
+        min-width: 250px;
         border-style: solid;
       "
-    />
+      div
+    >
+      <section class="container2">
+        <div class="status">
+          5/8
+        </div>
+        <div class="info-wrapper">
+          <span class="info">12</span>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7f98e0959f5b9c491f0b270487b18449bd093da14fa2811932510ec82fbc994?apiKey=5d085c7cdd73428593406abbf962b0e1&" alt="Information icon" class="icon">
+        </div>
+        <div tabindex="0" class="filters">
+          Filters
+        </div>
+      </section>
+    </div>
+
     <div style="display: flex">
       <div class="ticket-container">
         <div v-for="(ticket, idx) in tickets" :key="idx" class="ticket" relative rounded-xl bg-transparent>
@@ -76,6 +92,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
           <div relative left-9 top--19 text-white>
             <b shadow-black drop-shadow-2xl>
               #{{ ticket.id }}
+
             </b>
           </div>
         </div>
@@ -101,7 +118,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
     <div class="content-container">
       <div class="token-info">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/705d840a5c01a665eb92da46a8cdf5691b4b39b4f1ff16ae642ec6a9935290ef?apiKey=5d085c7cdd73428593406abbf962b0e1&"
+          src="https://i.imgur.com/PNiRede.png"
           alt="Token Image"
           class="img-icon"
         >
@@ -115,7 +132,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
         >
         <span>Reward</span>
       </div>
-      <div class="image-container">
+      <div class="market-info">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/118ea3421157b278096eb1e72eb3add6b177c02683bc8d48016b181900acad72?apiKey=5d085c7cdd73428593406abbf962b0e1&"
           alt=""
@@ -125,7 +142,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
       </div>
       <div class="staking-info">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8731d32d78b04aaa9ae2529cef4135f1987c2028dd328517f107e4b3d4660585?apiKey=5d085c7cdd73428593406abbf962b0e1&"
+          src="https://i.imgur.com/YVWLtQJ.png"
           alt="Staking Image"
           class="img-icon-large"
         >
@@ -171,37 +188,28 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
             </div>
           </div>
         </article>
-        <article class="card-wrapper">
-          <div class="highlight-card">
-            <div class="highlight-card-content">
-              <h2 class="highlight-card-title">
-                STAKE
-              </h2>
-              <p class="highlight-card-duration">
-                12d
+        <section class="stake-container">
+          <div class="details-column">
+            <time class="time-remaining" datetime="2023-10-12T12:00:00Z">12d</time>
+            <p class="pool-number">
+              pool #12
+            </p>
+          </div>
+          <button class="stake-button">
+            STAKE
+          </button>
+          <div class="stake-details">
+            <p class="percent">
+              3%
+            </p>
+            <div class="stake-total-container">
+              <p class="stake-total">
+                100000
               </p>
-              <p class="highlight-card-desc">
-                pool #12
-              </p>
-            </div>
-            <div class="highlight-card-info">
-              <p class="highlight-card-rate">
-                3%
-              </p>
-              <div class="metadata-wrapper">
-                <p class="metadata-value">
-                  100000
-                </p>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7f98e0959f5b9c491f0b270487b18449bd093da14fa2811932510ec82fbc994?apiKey=5d085c7cdd73428593406abbf962b0e1&"
-                  class="icon-tiny"
-                  alt="Tiny Icon"
-                >
-              </div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7f98e0959f5b9c491f0b270487b18449bd093da14fa2811932510ec82fbc994?apiKey=5d085c7cdd73428593406abbf962b0e1&" alt="" class="icon">
             </div>
           </div>
-        </article>
+        </section>
         <article class="card-wrapper">
           <div class="important-card">
             <img
