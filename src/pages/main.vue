@@ -16,84 +16,81 @@ async function getCards() {
   tickets.value = await (await fetch('http://localhost:80/cards')).json()
 }
 
-const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice(3, 8)
+// const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice(3, 8)
 </script>
 
 <template>
   <!-- SHAPKA -->
-  <section class="container__header">
-    <img
-      loading="lazy"
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9705e7b747890da659615a342910978284e160d081bd1df967b14fa240c2a20?apiKey=5d085c7cdd73428593406abbf962b0e1&"
-      alt="Description of main image"
-      class="main-image"
-    >
-    <div class="connect-section">
-      <button class="connect-button-container">
-        <span class="connect-button-text">CONNECT</span>
-      </button>
-      <div class="icon-container">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c3f9de862394d4238f7ba420c6ed640656e154065f19e40e31f1f8a5317f407d?apiKey=5d085c7cdd73428593406abbf962b0e1&"
-          alt="Icon description"
-          class="icon-image"
-        >
-      </div>
+  <div class="header">
+    <div class="main-img">
+      <img
+        loading="lazy"
+        src="https://i.imgur.com/sv0YDsz_d.webp?maxwidth=760&fidelity=grand"
+        alt="Description of main image"
+        class="main-image"
+      >
     </div>
-  </section>
+  </div>
   <!-- SHAPKA END -->
 
   <!-- MAIN -->
-
-  <div class="main">
-    <div
-      style="
-        display: flex;
-        border-radius: 0px 0px 10px 10px;
-        border-color: #000;
-        border: 2px;
-        border-top: 0px;
-        min-height: 30px;
-        min-width: 250px;
-        border-style: solid;
-      "
-      div
-    >
-      <section class="container2">
-        <div class="status">
-          5/8
-        </div>
-        <div class="info-wrapper">
-          <span class="info">12</span>
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7f98e0959f5b9c491f0b270487b18449bd093da14fa2811932510ec82fbc994?apiKey=5d085c7cdd73428593406abbf962b0e1&" alt="Information icon" class="icon">
-        </div>
-        <div tabindex="0" class="filters">
-          Filters
-        </div>
-      </section>
+  <div class="connect-section">
+    <div class="info-wrapper">
+      <span class="info">12</span>
+      <img loading="lazy" src="https://i.imgur.com/67eheI6_d.webp?maxwidth=760&fidelity=grand" alt="Information icon" class="icon">
     </div>
+    <!-- button -->
+    <button class="claim-button-container">
+      <span class="claim-button-container">Claim</span>
+    </button>
+    <!-- button -->
+    <div class="status">
+      5/27
+    </div>
+    <!-- Connect -->
+    <div class="icon-container">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/c3f9de862394d4238f7ba420c6ed640656e154065f19e40e31f1f8a5317f407d?apiKey=5d085c7cdd73428593406abbf962b0e1&"
+        alt="Icon description"
+        class="icon-image"
+      >
+    </div>
+    <button class="connect-button-container">
+      <span class="connect-button-text">CONNECT</span>
+    </button>
+    <!-- Connect-user -->
+  </div>
 
-    <div style="display: flex">
-      <div class="ticket-container">
-        <div v-for="(ticket, idx) in tickets" :key="idx" class="ticket" relative rounded-xl bg-transparent>
-          <img :src="ticket.imageUri" alt="ticket" relative rounded-xl>
-          <div relative left--12 top--55 text-white>
-            <b shadow-black drop-shadow-2xl>
-              {{ getDate(ticket.reloadTime) }}
-            </b>
-          </div>
-          <div relative left--8 top--13 text-white>
-            <b shadow-black drop-shadow-2xl>
-              Pool #
-              {{ ticket.poolId }}
-            </b>
-          </div>
-          <div relative left-9 top--19 text-white>
-            <b shadow-black drop-shadow-2xl>
-              #{{ ticket.id }}
-
-            </b>
+  <div ml-auto mr-auto h-fit w-fit>
+    <div class="main">
+      <div
+        style=" width: fit-content;
+    height: fit-content"
+      >
+        <div class="ticket-container">
+          <div v-for="(ticket, idx) in tickets" :key="idx" class="basis-[33.333%]">
+            <div class="ticket rounded-[15px]" relative w-full bg-transparent p-3>
+              <div>
+                <div absolute left-0 top-0>
+                  <img :src="ticket.imageUri" alt="ticket" rounded-xl>
+                </div>
+                <div class="time" text-white>
+                  12
+                </div>
+                <div absolute text-white>
+                  <b shadow-black drop-shadow-2xl>
+                    Pool #
+                    {{ ticket.poolId }}
+                  </b>
+                </div>
+                <div absolute text-white>
+                  <b shadow-black drop-shadow-2xl>
+                    #{{ ticket.id }}
+                  </b>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

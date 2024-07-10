@@ -1,31 +1,31 @@
 <script setup lang="ts">
-// import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
+import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
 
-// const { t, locale } = useI18n()
+const { t, locale } = useI18n()
 
-// let currentLocaleId: number = 2
+let currentLocaleId: number = 2
 
-// function toggleEnRuId(): number {
-//   if (currentLocaleId === 2) {
-//     currentLocaleId = 12
-//     return 12
-//   }
-//   currentLocaleId = 2
-//   return 2
-// }
+function toggleEnRuId(): number {
+  if (currentLocaleId === 2) {
+    currentLocaleId = 12
+    return 12
+  }
+  currentLocaleId = 2
+  return 2
+}
 
-// async function toggleLocales() {
-//   const locales = availableLocales
-//   // const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-//   const newLocale = locales[toggleEnRuId()]
-//   await loadLanguageAsync(newLocale)
-//   locale.value = newLocale
-// }
+async function toggleLocales() {
+  const locales = availableLocales
+  // const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+  const newLocale = locales[toggleEnRuId()]
+  await loadLanguageAsync(newLocale)
+  locale.value = newLocale
+}
 </script>
 
 <template>
   <nav flex="~ gap-4" mt-6 justify-center text-xl>
-    <!-- <RouterLink icon-btn to="/" :title="t('button.home')">
+    <RouterLink icon-btn to="/" :title="t('button.home')">
       <div i-carbon-home />
     </RouterLink>
 
@@ -39,6 +39,6 @@
 
     <RouterLink icon-btn to="/about" :title="t('button.about')" data-test-id="about">
       <div i-carbon-dicom-overlay />
-    </RouterLink> -->
+    </RouterLink>
   </nav>
 </template>
