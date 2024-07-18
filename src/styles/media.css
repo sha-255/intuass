@@ -26,36 +26,36 @@
 @media (max-width: 991px) {
   .button-container {
     white-space: initial;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
   }
 }
 @media (max-width: 991px) {
   .content-wrapper {
     max-width: 100%;
-    padding: 0 20px;
+
   }
-}
-@media (max-width: 991px) {
+} */
+ @media (max-width: 991px) {
   .token-info {
     white-space: initial;
-    padding: 0 20px;
+
   }
 }
 @media (max-width: 991px) {
   .reward-info {
     white-space: initial;
-    padding: 0 20px;
+
   }
 }
 @media (max-width: 991px) {
   .market-info {
-    padding: 0 20px;
+    
   }
 }
 @media (max-width: 991px) {
   .staking-info {
     white-space: initial;
-    padding: 0 20px;
+    
   }
 }
 /* button end */
@@ -75,9 +75,7 @@
 }
 @media (max-width: 991px) {
   .section-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
+    
   }
 }
 @media (max-width: 991px) {
@@ -87,8 +85,7 @@
 }
 @media (max-width: 991px) {
   .card {
-    margin-top: 40px;
-    padding: 0 20px;
+    
   }
 }
 @media (max-width: 991px) {
