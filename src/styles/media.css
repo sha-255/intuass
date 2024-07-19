@@ -32,30 +32,25 @@
 @media (max-width: 991px) {
   .content-wrapper {
     max-width: 100%;
-
   }
-} */
- @media (max-width: 991px) {
+}
+*/ @media (max-width: 991px) {
   .token-info {
     white-space: initial;
-
   }
 }
 @media (max-width: 991px) {
   .reward-info {
     white-space: initial;
-
   }
 }
 @media (max-width: 991px) {
   .market-info {
-    
   }
 }
 @media (max-width: 991px) {
   .staking-info {
     white-space: initial;
-    
   }
 }
 /* button end */
@@ -75,7 +70,6 @@
 }
 @media (max-width: 991px) {
   .section-wrapper {
-    
   }
 }
 @media (max-width: 991px) {
@@ -85,7 +79,6 @@
 }
 @media (max-width: 991px) {
   .card {
-    
   }
 }
 @media (max-width: 991px) {

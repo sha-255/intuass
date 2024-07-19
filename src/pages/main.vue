@@ -15,8 +15,6 @@ const tickets: Ref<Ticket[]> = ref([])
 async function getCards() {
   tickets.value = await (await fetch('http://localhost:80/cards')).json()
 }
-
-const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice(3, 8)
 </script>
 
 <template>
@@ -34,20 +32,43 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
   <!-- SHAPKA END -->
 
   <!-- MAIN -->
+  <!-- БЕЗ КНОПКИ CONNECT БЕЗ КНОПКИ CONNECT -->
+  <!-- <div class="connect-section">
+    <div class="info-wrapper">
+      <span class="info">12</span>
+      <img loading="lazy" src="https://i.imgur.com/67eheI6_d.webp?maxwidth=760&fidelity=grand" alt="Information icon" class="icon">
+    </div>
+
+    <button class="claim-button-container">
+      <span class="claim-button-container">Claim</span>
+    </button>
+
+    <button class="status">
+      5/27
+    </button>
+
+    <button class="icon-container">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/c3f9de862394d4238f7ba420c6ed640656e154065f19e40e31f1f8a5317f407d?apiKey=5d085c7cdd73428593406abbf962b0e1&"
+        alt="Icon description"
+        class="icon-image"
+      >
+    </button> -->
   <div class="connect-section">
     <div class="info-wrapper">
       <span class="info">12</span>
       <img loading="lazy" src="https://i.imgur.com/67eheI6_d.webp?maxwidth=760&fidelity=grand" alt="Information icon" class="icon">
     </div>
-    <!-- button -->
+
     <button class="claim-button-container">
       <span class="claim-button-container">Claim</span>
     </button>
-    <!-- button -->
+
     <button class="status">
       5/27
     </button>
-    <!-- Connect -->
+
     <button class="icon-container">
       <img
         loading="lazy"
@@ -127,7 +148,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
 
   <!-- button Start -->
   <div w-full>
-    <button m-auto class="button-container button-text">
+    <button m-auto class="button-container">
       START
     </button>
   </div>
@@ -138,9 +159,9 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
   <!-- button start end -->
   <!-- menu knopok -->
 
-  <!-- color #F5F0E5 in button -->
+  <!-- накинуть класс content-wrapper-active на каждую кнопку при нажатии -->
   <section class="content-wrapper">
-    <div class="token-info">
+    <button class="token-info">
       <img
         src="https://i.imgur.com/PNiRede.png"
         alt="Token Image"
@@ -150,9 +171,9 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
       <div class="token-text">
         <span>Tokens</span>
       </div>
-    </div>
+    </button>
 
-    <div class="reward-info">
+    <button class="reward-info">
       <img
         src="https://i.imgur.com/fGIbKOG.png"
         alt="Token Image"
@@ -161,8 +182,8 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
       <div class="token-text">
         <span>Reward</span>
       </div>
-    </div>
-    <div class="market-info">
+    </button>
+    <button class="market-info">
       <img
         src="https://i.imgur.com/EY6B8o0.png"
         alt="Token Image"
@@ -171,8 +192,8 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
       <div class="token-text">
         <span>Market</span>
       </div>
-    </div>
-    <div class="staking-info">
+    </button>
+    <button class="staking-info">
       <img
         src="https://i.imgur.com/OnBRXr0.png"
         alt="Token Image"
@@ -181,7 +202,7 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
       <div class="token-text">
         <span>Staking</span>
       </div>
-    </div>
+    </button>
   </section>
   <!-- menu knopok end -->
 
@@ -205,18 +226,20 @@ const getDate = (date: string): string => date.split('T')[1].split('.')[0].slice
           18.65
         </p>
         <div class="icon-wrapper">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/667c7c779408eb5da90f9fab06186aa1a51bdec29b18c9a2da556237d480a344?apiKey=5d085c7cdd73428593406abbf962b0e1&"
-            class="icon-small"
-            alt="Small Icon 1"
-          >
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/506d326008a0a02f7ca50e6c3d8baa2dc568ed9caaf81d949eece1ba7611e965?apiKey=5d085c7cdd73428593406abbf962b0e1&"
-            class="icon-small"
-            alt="Small Icon 2"
-          >
+          <button>
+            <svg class="icon-small-left" width="50" height="50" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="0.00195312" width="33.6382" height="32.9787" rx="10" fill="#7FE1C0" />
+              <path d="M16.4901 8.24805V8.24805C12.1188 8.24805 8.5752 11.7917 8.57519 16.1629L8.57519 16.4927C8.57519 21.0461 12.2665 24.7374 16.8199 24.7374V24.7374C21.3733 24.7374 25.0645 21.0461 25.0645 16.4927L25.0645 16.1629" stroke="white" />
+              <path d="M23.0857 9.56641L16.1602 16.4919M16.1602 16.4919L16.1602 13.5238M16.1602 16.4919L19.458 16.4919" stroke="white" />
+            </svg>
+          </button>
+          <button>
+            <svg class="icon-small-right" width="50" height="50" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="33.8506" y="32.9785" width="33.6382" height="32.9787" rx="10" transform="rotate(-180 33.8506 32.9785)" fill="#7FE1C0" />
+              <path d="M17.3605 24.7324V24.7324C21.7318 24.7324 25.2754 21.1888 25.2754 16.8175V16.4878C25.2754 11.9344 21.5841 8.24309 17.0307 8.24309V8.24309C12.4773 8.24309 8.78606 11.9344 8.78606 16.4878V16.8175" stroke="white" />
+              <path d="M10.7649 23.4141L17.6904 16.4885M17.6904 16.4885V19.4566M17.6904 16.4885H14.3926" stroke="white" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
