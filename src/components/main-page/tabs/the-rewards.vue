@@ -1,0 +1,3 @@
+<template>
+  rewards
+</template>
