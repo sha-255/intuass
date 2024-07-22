@@ -2,21 +2,27 @@
 defineOptions({
   name: 'IndexPage',
 })
-const user = useUserStore()
-const name = ref(user.savedName)
-const password = ref('')
+// const user = useUserStore()
+// const name = ref(user.savedName)
+// const password = ref('')
 
 const router = useRouter()
-function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
+// function go() {
+//   if (name.value)
+//     router.push(`/hi/${encodeURIComponent(name.value)}`)
+// }
 
-const { t } = useI18n()
+// const { t } = useI18n()
+
+onMounted(() => {
+  toggleDark()
+  router.push(`/main`)
+})
 </script>
 
 <template>
-  <div>
+  <div />
+  <!-- <div>
     <div text-4xl>
       <div i-carbon-user-avatar-filled inline-block />
     </div>
@@ -24,12 +30,12 @@ const { t } = useI18n()
       <a rel="noreferrer" href="https://github.com/sha-255" target="_blank">
         {{ t('app.name') }}
       </a>
-    </p>
-    <!-- <p>
+    </p> -->
+  <!-- <p>
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
     </p> -->
 
-    <div py-4 />
+  <!-- <div py-4 />
 
     <div class="col">
       <TheInput
@@ -58,7 +64,7 @@ const { t } = useI18n()
         {{ t('button.go') }}
       </button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <route lang="yaml">

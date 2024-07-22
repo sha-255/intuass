@@ -9,6 +9,7 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import './styles/media.css'
 import 'uno.css'
+import '../tonconnect-manifest.json'
 
 export const createApp = ViteSSG(
   App,

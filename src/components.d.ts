@@ -7,11 +7,21 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Header: typeof import('./components/MainPage/TheHeader.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StakePool: typeof import('./components/main-page/tabs/stake-pool.vue')['default']
+    TheCard: typeof import('./components/the-card.vue')['default']
+    TheCards: typeof import('./components/main-page/the-cards.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
+    TheHeader: typeof import('./components/main-page/the-header.vue')['default']
     TheInput: typeof import('./components/TheInput.vue')['default']
+    TheMarket: typeof import('./components/main-page/tabs/the-market.vue')['default']
+    TheRewards: typeof import('./components/main-page/tabs/the-rewards.vue')['default']
+    TheStaking: typeof import('./components/main-page/tabs/the-staking.vue')['default']
+    TheTabs: typeof import('./components/main-page/the-tabs.vue')['default']
+    TheUserInfo: typeof import('./components/main-page/the-user-info.vue')['default']
   }
 }

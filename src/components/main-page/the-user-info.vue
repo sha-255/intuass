@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import { TonConnectUI } from '@tonconnect/ui'
+
 const props = defineProps(['info'])
+
+onMounted(() => {
+  const tonConnectUI = new TonConnectUI({
+    manifestUrl: 'http://localhost:3333/tonconnect-manifest.json?import',
+    buttonRootId: 'ton-connect',
+  })
+})
 </script>
 
 <template>
@@ -15,7 +24,7 @@ const props = defineProps(['info'])
       <span relative class="right-[3vw]">Claim</span>
     </button>
 
-    <button class="status" mb-auto mt-auto h-fit w-fit>
+    <button v-if="info?.cards?.length" class="status" mb-auto mt-auto h-fit w-fit>
       {{ info?.cards?.length }}/{{ info?.cards?.length }}
     </button>
 
@@ -31,8 +40,10 @@ const props = defineProps(['info'])
     <button v-if="info?.wallet?.address" class="connect-button-container" mb-auto mt-auto h-fit w-fit pb-1 pt-1>
       <span class="connect-button-text">{{ info?.wallet?.address }}</span>
     </button>
-    <button v-else class="connect-button-container" mb-auto mt-auto h-fit w-fit pb-1 pt-1>
+
+    <div v-if="!info?.wallet?.address" id="ton-connect" />
+    <!-- <button v-else class="connect-button-container" mb-auto mt-auto h-fit w-fit pb-1 pt-1>
       <span class="connect-button-text">CONNECT</span>
-    </button>
+    </button> -->
   </div>
 </template>

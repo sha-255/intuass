@@ -150,17 +150,18 @@ main {
 .connect-section {
   margin: 20px auto 0 auto;
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
-  padding: 5px;
+  padding: 10px;
   width: min-content;
 }
 .connect-button-container {
   justify-content: center;
   border-radius: 30px;
-  background-color: #f5f0e5;
+  /* background-color: #f5f0e5; */
+  background-color: #000000;
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -200,19 +201,22 @@ main {
   font-palette: 'dlig' on;
   /* background-color: #1fe3e7; */
   justify-content: center;
+  color: #ffffff;
 }
 .claim-button-text {
   font-palette: 'dlig' on;
-  background-color: #1fe3e7;
+  /* background-color: #1fe3e7; */
   justify-content: center;
 }
 .icon-container {
+  aspect-ratio: 1 / 1;
+
   justify-content: center;
   align-items: center;
   border-radius: 30px;
   background-color: #f5f0e5;
   display: flex;
-  width: 55px;
+  //width: 55px;
   /* height: 50px; */
   padding: 10px;
   transition:  0.1s cubic-bezier(0.37, 0, 0.63, 1);
@@ -346,7 +350,7 @@ main {
 }
 .token-info {
   border-radius: 30px;
-  background-color: #f5f0e5;
+  /* background-color: #f5f0e5; */
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #1c170d;
   font-size: 14px;
@@ -372,7 +376,7 @@ main {
   font-weight: 400;
   display: flex;
 }
-.content-wrapper-active {
+.active {
   border-radius: 30px;
   background-color: #f5f0e5; 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -699,6 +703,3 @@ main {
   width: 50px;
   border-radius: 15px;
 }
-
- 
-/* inas pol stake */
