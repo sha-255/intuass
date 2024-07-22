@@ -31,21 +31,40 @@ function getUserInfo() {
       userInfo.value = result
     })
     .catch(error => console.error(error))
+
+  provide('userInfo', userInfo)
 }
 
 onBeforeMount(() => {
   getUserInfo()
-  provide('userInfo', userInfo)
 })
 
 function startGame() {
   router.push('/the-game')
 }
+
+function claim() {
+  const myHeaders = new Headers()
+  myHeaders.append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
+
+  const requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    redirect: 'follow',
+  }
+
+  fetch('http://localhost/users/1/claimReward', requestOptions)
+    .then(response => response.json())
+    .then(result => result)
+    .catch(error => console.error(error))
+
+  getUserInfo()
+}
 </script>
 
 <template>
   <the-header />
-  <the-user-info :info="userInfo" />
+  <the-user-info :info="userInfo" @claim="claim" />
   <the-cards :tickets="userInfo?.cards" />
   <div w-full>
     <button m-auto class="button-container" @click="startGame">
