@@ -21,8 +21,8 @@ onMounted(() => {
       </div>
     </div>
 
-    <button class="claim-button-container p-[5vw]" mb-auto mt-auto h-full w-full overflow-hidden pb-1 pt-1 text-center>
-      <span relative class="right-[3vw]" @click="emit('claim')">Claim</span>
+    <button class="claim-button-container p-[5vw]" mb-auto mt-auto h-full w-full overflow-hidden pb-1 pt-1 text-center @click="emit('claim')">
+      <span relative class="right-[3vw]">Claim</span>
     </button>
 
     <button v-if="info?.cards?.length" class="status" mb-auto mt-auto h-fit w-fit>
