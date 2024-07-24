@@ -9,9 +9,13 @@ useHead({
       name: 'description',
       content: 'Crypto game',
     },
+    // {
+    //   name: 'theme-color',
+    //   content: () => isDark.value ? '#00aba9' : '#ffffff',
+    // },
     {
       name: 'theme-color',
-      content: () => isDark.value ? '#00aba9' : '#ffffff',
+      content: () => '#ffffff',
     },
   ],
   link: [

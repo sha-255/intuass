@@ -16,7 +16,8 @@ body,
 }
 
 html.dark {
-  background: #121212;
+  /* background: #121212; */
+  background: #ffffff;
   color-scheme: dark;
 }
 
