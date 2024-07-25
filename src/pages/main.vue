@@ -82,68 +82,68 @@ async function getCards() {
     </button>
     <!-- Connect-user -->
   </div>
+  <div>
+    <div class="main">
+      <div class="card-wrapper-table">
+        <div relative>
+          <img
+            loading="lazy"
+            src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
+            alt="Icon description"
+            class="cards-grid"
+          >
+          <div class="background-black rounded-[15px]" absolute left-0 top-0 />
+          <div class="card-poolId" absolute bottom-0 left-1.5 text-white>
+            <b shadow-black drop-shadow-2xl>
+              Pool #
+            <!-- {{ ticket.poolId }} -->
 
-  <div class="main">
-    <div class="card-wrapper-table">
-      <div relative>
+            </b>
+          </div>
+          <div class="card-ticket-id" absolute bottom-0 right-1.5 text-white>
+            <b shadow-black drop-shadow-2xl>
+              #152
+            <!-- ticket.id -->
+
+            </b>
+          </div>
+          <div class="card-text-time left-[10%] top-[30%]" absolute text-white>
+            12:37
+          </div>
+        </div>
         <img
           loading="lazy"
           src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
           alt="Icon description"
           class="cards-grid"
         >
-        <div class="background-black rounded-[15px]" absolute left-0 top-0 />
-        <div class="card-poolId" absolute bottom-0 left-1.5 text-white>
-          <b shadow-black drop-shadow-2xl>
-            Pool #
-            <!-- {{ ticket.poolId }} -->
-
-          </b>
-        </div>
-        <div class="card-ticket-id" absolute bottom-0 right-1.5 text-white>
-          <b shadow-black drop-shadow-2xl>
-            #152
-            <!-- ticket.id -->
-
-          </b>
-        </div>
-        <div class="card-text-time left-[10%] top-[30%]" absolute text-white>
-          12:37
-        </div>
+        <img
+          loading="lazy"
+          src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
+          alt="Icon description"
+          class="cards-grid"
+        >
+        <img
+          loading="lazy"
+          src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
+          alt="Icon description"
+          class="cards-grid"
+        >
+        <img
+          loading="lazy"
+          src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
+          alt="Icon description"
+          class="cards-grid"
+        >
+        <img
+          loading="lazy"
+          src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
+          alt="Icon description"
+          class="cards-grid"
+        >
       </div>
-      <img
-        loading="lazy"
-        src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
-        alt="Icon description"
-        class="cards-grid"
-      >
-      <img
-        loading="lazy"
-        src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
-        alt="Icon description"
-        class="cards-grid"
-      >
-      <img
-        loading="lazy"
-        src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
-        alt="Icon description"
-        class="cards-grid"
-      >
-      <img
-        loading="lazy"
-        src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
-        alt="Icon description"
-        class="cards-grid"
-      >
-      <img
-        loading="lazy"
-        src="https://i.imgur.com/3BQEv8B_d.webp?maxwidth=760&fidelity=grand"
-        alt="Icon description"
-        class="cards-grid"
-      >
     </div>
   </div>
-
   <!-- MAIN END -->
 
   <!-- button Start -->
