@@ -1,26 +1,42 @@
 <script setup lang="ts">
-const myHeaders = new Headers()
-myHeaders.append('Content-Type', 'application/json')
-
-fetch('http://localhost/signIn', {
-  method: 'POST',
-  headers: myHeaders,
-  body: JSON.stringify({
-    address: 'sex777',
-  }),
-  redirect: 'follow',
-})
-  .then(response => response.json())
-  .then(result => localStorage.setItem('accessToken', result?.accessToken))
-  .catch(error => console.error(error))
+import { API_BASE_URL } from '~/.config'
 
 const router = useRouter()
 const userInfo = ref({})
 
+onBeforeMount(() => {
+  signIn()
+  getUserInfo()
+})
+
+function signIn() {
+  const myHeaders = new Headers()
+  myHeaders.append('Content-Type', 'application/json')
+
+  const url = new URL(API_BASE_URL)
+  url.pathname = '/signIn'
+
+  fetch(url, {
+    method: 'POST',
+    headers: myHeaders,
+    body: JSON.stringify({
+      address: 'sex777',
+    }),
+    redirect: 'follow',
+  })
+    .then(response => response.json())
+    .then(result => localStorage.setItem('accessToken', result?.accessToken))
+    .catch(error => console.error(error))
+}
+
 function getUserInfo() {
   const myHeaders = new Headers()
   myHeaders.append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
-  fetch('http://localhost/users/main/1', {
+
+  const url = new URL(API_BASE_URL)
+  url.pathname = '/users/main/1'
+
+  fetch(url, {
     method: 'GET',
     headers: myHeaders,
     redirect: 'follow',
@@ -34,10 +50,6 @@ function getUserInfo() {
 
   provide('userInfo', userInfo)
 }
-
-onBeforeMount(() => {
-  getUserInfo()
-})
 
 function startGame() {
   router.push('/the-game')
@@ -53,7 +65,10 @@ function claim() {
     redirect: 'follow',
   }
 
-  fetch('http://localhost/users/1/claimReward', requestOptions)
+  const url = new URL(API_BASE_URL)
+  url.pathname = '/users/1/claimReward'
+
+  fetch(url, requestOptions)
     .then(response => response.json())
     .then(result => result)
     .catch(error => console.error(error))

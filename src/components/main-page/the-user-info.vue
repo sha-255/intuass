@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { TonConnectUI } from '@tonconnect/ui'
+import { TON_CONNECT_MANIFEST_URL } from '~/.config'
 
 const props = defineProps(['info'])
 const emit = defineEmits(['claim'])
 
 onMounted(() => {
   const tonConnectUI = new TonConnectUI({
-    manifestUrl: 'http://localhost:3333/tonconnect-manifest.json?import',
+    manifestUrl: TON_CONNECT_MANIFEST_URL,
     buttonRootId: 'ton-connect',
   })
 })
