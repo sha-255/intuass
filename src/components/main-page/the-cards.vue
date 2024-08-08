@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps(['tickets'])
 
-const isActive = ref(true)
+// const isActive = ref(true)
 
 // interface Ticket {
 //   id: number

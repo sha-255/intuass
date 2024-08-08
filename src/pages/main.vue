@@ -75,6 +75,10 @@ function claim() {
 
   getUserInfo()
 }
+
+function penis(tickets: string): string {
+  return `${zopa} govno`
+}
 </script>
 
 <template>
