@@ -68,7 +68,7 @@ const userInfo = inject('userInfo')
         </div>
         <div>0%</div>
         <div>pool #0</div>
-        <div gap-1>
+        <div class="coin-stake">
           0
           <img
             loading="lazy"
