@@ -1,19 +1,23 @@
 <script setup lang="ts">
-import { TonConnectUI } from '@tonconnect/ui'
+import { TonConnectUI, WalletInfoBase } from '@tonconnect/ui'
 import { TON_CONNECT_MANIFEST_URL } from '~/.config'
 
 const props = defineProps(['info'])
 const emit = defineEmits(['claim'])
+
+const wallet = ref()
 
 onMounted(() => {
   const tonConnectUI = new TonConnectUI({
     manifestUrl: TON_CONNECT_MANIFEST_URL,
     buttonRootId: 'ton-connect',
   })
+  wallet.value = tonConnectUI.connector.wallet
 })
 </script>
 
 <template>
+  {{ wallet }}
   <div class="connect-section" h-fit>
     <div class="info-wrapper" mb-auto mt-auto h-full w-full>
       <span class="info">{{ info?.wallet?.reward }}</span>
