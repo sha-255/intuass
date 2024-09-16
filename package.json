@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@tonconnect/ui": "^2.0.6",
+    "@townsquarelabs/ui-vue": "2.0.10-beta.0",
     "@unhead/vue": "^1.9.5",
     "@unocss/reset": "^0.59.4",
     "@vueuse/core": "^10.9.0",
