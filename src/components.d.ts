@@ -11,7 +11,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StakePool: typeof import('./components/main-page/tabs/stake-pool.vue')['default']
-    Test: typeof import('./components/main-page/test.vue')['default']
     TheCard: typeof import('./components/the-card.vue')['default']
     TheCards: typeof import('./components/main-page/the-cards.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']

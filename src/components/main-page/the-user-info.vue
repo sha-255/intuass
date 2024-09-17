@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CHAIN, TonConnectUI, toUserFriendlyAddress } from '@tonconnect/ui'
 import { TON_CONNECT_MANIFEST_URL } from '~/.config'
+import { signIn } from '~/api/auth'
 
 const props = defineProps(['info'])
 const emit = defineEmits(['claim'])
@@ -19,12 +20,12 @@ onMounted(() => {
     window.hex = window.tcui?.wallet?.account.address
     wallet.value = toUserFriendlyAddress(window.tcui?.wallet?.account.address || '', tonConnectUI?.account?.chain === CHAIN.TESTNET)
     window.raw = toUserFriendlyAddress(window.tcui?.wallet?.account.address || '', tonConnectUI?.account?.chain === CHAIN.TESTNET)
+    signIn(window.raw)
   }, 1_000)
 })
 </script>
 
 <template>
-  {{ wallet }}
   <div class="connect-section" h-fit>
     <div class="info-wrapper" mb-auto mt-auto h-full w-full>
       <span class="info">{{ info?.wallet?.reward }}</span>

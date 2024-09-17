@@ -1,82 +1,22 @@
 <script setup lang="ts">
-import { API_BASE_URL } from '~/.config'
+import { signIn } from '~/api/auth'
+import { claim, getUserInfo } from '~/api/user'
 
 const router = useRouter()
-const userInfo = ref({})
+const userInfo = ref()
 
 onBeforeMount(() => {
-  signIn()
-  getUserInfo()
-})
-
-function signIn() {
-  const myHeaders = new Headers()
-  myHeaders.append('Content-Type', 'application/json')
-
-  const url = new URL(API_BASE_URL)
-  url.pathname = '/signIn'
-
-  fetch(url, {
-    method: 'POST',
-    headers: myHeaders,
-    body: JSON.stringify({
-      address: 'sex777',
-    }),
-    redirect: 'follow',
-  })
-    .then(response => response.json())
-    .then(result => localStorage.setItem('accessToken', result?.accessToken))
-    .catch(error => console.error(error))
-}
-
-function getUserInfo() {
-  const myHeaders = new Headers()
-  myHeaders.append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
-
-  const url = new URL(API_BASE_URL)
-  url.pathname = '/users/main/1'
-
-  fetch(url, {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow',
-  })
-    .then(response => response.json())
-    .then((result) => {
-      console.log(result)
-      userInfo.value = result
-    })
-    .catch(error => console.error(error))
-
+  userInfo.value = getUserInfo()
   provide('userInfo', userInfo)
-}
+})
 
 function startGame() {
   router.push('/the-game')
 }
 
-function claim() {
-  const myHeaders = new Headers()
-  myHeaders.append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
-
-  const requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    redirect: 'follow',
-  }
-
-  const url = new URL(API_BASE_URL)
-  url.pathname = '/users/1/claimReward'
-
-  fetch(url, requestOptions)
-    .then(response => response.json())
-    .then(result => result)
-    .catch(error => console.error(error))
-
-  getUserInfo()
-}
-
+// eslint-disable-next-line unused-imports/no-unused-vars
 function penis(tickets: string): string {
+  const zopa = 'penis'
   return `${zopa} govno`
 }
 </script>
