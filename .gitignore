@@ -9,3 +9,6 @@ node_modules
 *.log
 cypress/downloads
 wasm
+
+.config.ts
+tonconnect-manifest.json

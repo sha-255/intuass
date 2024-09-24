@@ -1,28 +1,6 @@
 <script setup lang="ts">
-import { CHAIN, TonConnectUI, toUserFriendlyAddress } from '@tonconnect/ui'
-import { TON_CONNECT_MANIFEST_URL } from '~/.config'
-import { signIn } from '~/api/auth'
-
 const props = defineProps(['info'])
 const emit = defineEmits(['claim'])
-
-const wallet = ref()
-
-onMounted(() => {
-  const tonConnectUI = new TonConnectUI({
-    manifestUrl: TON_CONNECT_MANIFEST_URL,
-    buttonRootId: 'ton-connect',
-  })
-  setTimeout(() => {
-    window.tcui = tonConnectUI
-    window.connector = window.tcui?.connector
-    window.wallet = window.tcui?.wallet
-    window.hex = window.tcui?.wallet?.account.address
-    wallet.value = toUserFriendlyAddress(window.tcui?.wallet?.account.address || '', tonConnectUI?.account?.chain === CHAIN.TESTNET)
-    window.raw = toUserFriendlyAddress(window.tcui?.wallet?.account.address || '', tonConnectUI?.account?.chain === CHAIN.TESTNET)
-    signIn(window.raw)
-  }, 1_000)
-})
 </script>
 
 <template>
@@ -52,7 +30,7 @@ onMounted(() => {
       >
     </button>
     <button v-if="info?.wallet?.address" class="connect-button-container" mb-auto mt-auto h-fit w-fit pb-1 pt-1>
-      <span class="connect-button-text">{{ info?.wallet?.address }}</span>
+      <span class="connect-button-text">{{ `${info?.wallet?.address.slice(0, 5)}...` }}</span>
     </button>
     <div v-if="!info?.wallet?.address" id="ton-connect" />
     <!-- <button v-else class="connect-button-container" mb-auto mt-auto h-fit w-fit pb-1 pt-1>

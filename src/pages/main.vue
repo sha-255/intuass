@@ -1,17 +1,37 @@
 <script setup lang="ts">
+import { CHAIN, TonConnectUI, toUserFriendlyAddress } from '@tonconnect/ui'
+import { TON_CONNECT_MANIFEST_URL } from '~/.config'
 import { signIn } from '~/api/auth'
-import { claim, getUserInfo } from '~/api/user'
 
 const router = useRouter()
 const userInfo = ref()
+const wallet = ref()
 
-onBeforeMount(() => {
-  userInfo.value = getUserInfo()
+onMounted(async () => {
+  const tonConnectUI = new TonConnectUI({
+    manifestUrl: TON_CONNECT_MANIFEST_URL,
+    buttonRootId: 'ton-connect',
+  })
+  setTimeout(async () => {
+    try {
+      window.tcui = tonConnectUI
+      window.connector = window.tcui?.connector
+      window.wallet = window.tcui?.wallet
+      window.hex = window.tcui?.wallet?.account.address
+      wallet.value = toUserFriendlyAddress(window.tcui?.wallet?.account.address || '', tonConnectUI?.account?.chain === CHAIN.TESTNET)
+      window.raw = toUserFriendlyAddress(window.tcui?.wallet?.account.address || '', tonConnectUI?.account?.chain === CHAIN.TESTNET)
+    }
+    catch (er) {
+      console.error(er)
+    }
+    userInfo.value = (await signIn(window.raw))?.user
+    console.log('uinf', userInfo.value)
+  }, 1_000)
   provide('userInfo', userInfo)
 })
 
 function startGame() {
-  router.push('/the-game')
+  // router.push('/the-game')
 }
 
 // eslint-disable-next-line unused-imports/no-unused-vars
@@ -19,6 +39,8 @@ function penis(tickets: string): string {
   const zopa = 'penis'
   return `${zopa} govno`
 }
+
+function claim() {}
 </script>
 
 <template>

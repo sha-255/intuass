@@ -14,8 +14,7 @@ const props = defineProps(['tickets'])
 </script>
 
 <template>
-  <!-- ОСНОВА
-   <div class="main">
+  <div class="main">
     <div v-if="!tickets?.length" class="card-wrapper-table">
       <div />
       <span>There are no cards</span>
@@ -23,8 +22,8 @@ const props = defineProps(['tickets'])
     <div v-else class="card-wrapper-table">
       <the-card v-for="ticket in tickets" :key="ticket?.id" :ticket="ticket" />
     </div>
-  </div> -->
-  <div class="main-all">
+  </div>
+  <div v-if="false" class="main-all">
     <div class="main">
       <div content-center>
         <div relative>
