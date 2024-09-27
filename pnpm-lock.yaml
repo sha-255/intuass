@@ -38,6 +38,9 @@ importers:
       vue-demi:
         specifier: ^0.14.7
         version: 0.14.7(vue@3.4.23(typescript@5.4.5))
+      vue-gallery:
+        specifier: ^2.0.5
+        version: 2.0.5
       vue-i18n:
         specifier: ^9.13.0
         version: 9.13.0(vue@3.4.23(typescript@5.4.5))
@@ -2192,6 +2195,9 @@ packages:
   bluebird@3.7.2:
     resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
 
+  blueimp-gallery@2.44.0:
+    resolution: {integrity: sha512-msLsEV/7hpOokS/MimNbbrIv1lFnNe/45HeLJUvHUfuJklbPRiodXYSBs0Ibwe05un5bFRryQmmzhUZBiFaZmg==}
+
   body-parser@1.20.1:
     resolution: {integrity: sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
@@ -4061,6 +4067,10 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
+  opencollective-postinstall@2.0.3:
+    resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
+    hasBin: true
+
   optionator@0.9.3:
     resolution: {integrity: sha512-JjCoypp+jKn1ttEFExxhetCKeJt9zhAgAve5FXHixTvFDW/5aEktX9bufBKLRRMdU7bNtpLfcGu94B3cdEJgjg==}
     engines: {node: '>= 0.8.0'}
@@ -5305,6 +5315,9 @@ packages:
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
+
+  vue-gallery@2.0.5:
+    resolution: {integrity: sha512-kNJhDYNGRm56iDdfaZemhvCiFqqdpVV/1FYosnVBWw78nayoB8dcOKp51g1N0gmL7u45y8nn9KFL/V6rKI1Few==}
 
   vue-i18n@9.13.0:
     resolution: {integrity: sha512-NlZ+e8rhGSGNk/Vfh4IUvlPRjljPCRslbNYgQmYZY+sLXZgahw8fylQguZU3e8ntJDvitfe40f8p3udOiKMS0A==}
@@ -8039,6 +8052,8 @@ snapshots:
 
   bluebird@3.7.2: {}
 
+  blueimp-gallery@2.44.0: {}
+
   body-parser@1.20.1:
     dependencies:
       bytes: 3.1.2
@@ -10114,6 +10129,8 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
+  opencollective-postinstall@2.0.3: {}
+
   optionator@0.9.3:
     dependencies:
       '@aashutoshrathi/word-wrap': 1.2.6
@@ -11517,6 +11534,11 @@ snapshots:
       semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
+
+  vue-gallery@2.0.5:
+    dependencies:
+      blueimp-gallery: 2.44.0
+      opencollective-postinstall: 2.0.3
 
   vue-i18n@9.13.0(vue@3.4.23(typescript@5.4.5)):
     dependencies:

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const props = defineProps(['ticket'])
+const emit = defineEmits<{
+  click: [ id: number ]
+}>()
 </script>
 
 <template>
@@ -9,6 +12,7 @@ const props = defineProps(['ticket'])
       :src="ticket?.imageUri"
       alt="Icon description"
       class="cards-grid"
+      @click="emit('click', ticket?.id)"
     >
     <div class="card-poolId" absolute bottom-0 left-1.5 text-white>
       <b shadow-black drop-shadow-2xl>
