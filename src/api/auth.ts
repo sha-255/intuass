@@ -22,7 +22,7 @@ export async function signIn(address: string): Promise<any> {
   //     localStorage.setItem('accessToken', result?.accessToken)
   //   })
   //   .catch(error => console.error(error))
-  address = 'UQCP1jmBtFPNWuqjOW-CsPA6E8APZiAoU2EkbW0ixp8QojO2'
+  // address = 'UQCP1jmBtFPNWuqjOW-CsPA6E8APZiAoU2EkbW0ixp8QojO2'
   const myHeaders = new Headers()
   myHeaders.append('Authorization', 'Bearer')
   myHeaders.append('Content-Type', 'application/json')
